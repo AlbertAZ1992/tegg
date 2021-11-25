@@ -107,7 +107,7 @@ export class HTTPMethodRegister {
     }
 
     // 2. do register
-    const routerFunc = this.router[this.methodMeta.method.toLowerCase()];
+    const routerFunc = this.router[this.methodMeta.method];
     const methodMiddlewares = this.controllerMeta.getMethodMiddlewares(this.methodMeta);
     const aclMiddleware = aclMiddlewareFactory(this.controllerMeta, this.methodMeta);
     if (aclMiddleware) {
